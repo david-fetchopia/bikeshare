@@ -22,19 +22,19 @@ def get_filters():
     # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     # while (city not in ['chicago', 'new york city', 'washington']):
     while city not in CITY_DATA.keys():
-        city = input("Enter the city to analyze (i.e. chicago, new york city, washington): ")
+        city = raw_input("Enter the city to analyze (i.e. chicago, new york city, washington): ")
         city = city.lower()
     
     # get user input for month (all, january, february, ... , june)
     valid_months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'otober', 'november', 'december', 'all']
     while month not in valid_months:
-        month = input('Enter a month to filter by, or "all" to apply no month filter: ')
+        month = raw_input('Enter a month to filter by, or "all" to apply no month filter: ')
         month = month.lower()
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     valid_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all']
     while day not in valid_days:
-        day = input('Enter day of the week or "all": ')
+        day = raw_input('Enter day of the week or "all": ')
         day = day.lower()
 
     print('-'*40)
@@ -189,7 +189,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         show_raw_data(df)
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        restart = raw_input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
            break
 
